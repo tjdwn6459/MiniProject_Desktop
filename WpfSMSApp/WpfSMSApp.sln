@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSMSApp", "WpfSMSApp\WpfSMSApp.csproj", "{9D59E543-3A46-45D5-A0F6-CD23680BFA3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D59E543-3A46-45D5-A0F6-CD23680BFA3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D59E543-3A46-45D5-A0F6-CD23680BFA3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D59E543-3A46-45D5-A0F6-CD23680BFA3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D59E543-3A46-45D5-A0F6-CD23680BFA3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {905F07CB-DDD8-44F2-AE82-4A201EC25463}
+	EndGlobalSection
+EndGlobal
