@@ -39,7 +39,7 @@
         
          <!--제목입력-->
         <Label Content="계정정보" Grid.Row="0" Grid.Column="1" FontSize="26" FontWeight="ExtraBold"
-               VerticalContentAlignment="Bottom" />
+               VerticalContentAlignment="Bottom"  HorizontalAlignment="Left" />
         <!--제목입력 끝-->
 
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
