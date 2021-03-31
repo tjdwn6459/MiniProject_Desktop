@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:WpfSMSApp.View.User"
+    xmlns:iconpacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d" 
     d:DesignHeight="630" d:DesignWidth="1200"
     Title="UserList" Loaded="Page_Loaded">
@@ -64,8 +65,17 @@
 
             <Button x:Name="BtnExportPdf" 
                     FontSize="14"
-                    Background="WhiteSmoke" Foreground="Black"
+                    Background="LightGray" Foreground="Black"
                     Content="PDF익스포트" Height="50" Margin="5, 5" Click="BtnExportPdf_Click">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" Margin="20,0" VerticalAlignment="Center" />
+                            <iconpacks:PackIconMaterial Kind="FilePdfOutline" Width="20" Height="24" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+
             </Button>
         </StackPanel>
 
@@ -92,13 +102,13 @@
                       Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
                       ItemsSource="{Binding}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding UserID}" Header="순번"  Width="60" /> <!-- Width = * 모든컬럼들이 화면을 꽉채움-->
-                    <DataGridTextColumn Binding="{Binding UserIdentityNumber}" Header="사번" Width="*" />
-                    <DataGridTextColumn Binding="{Binding UserSurname}" Header="성" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding UserName}" Header="이름" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding UserEmail}" Header="이메일" Width="*"/>
-                    <DataGridTextColumn Binding="{Binding UserAdmin}" Header="관리자여부" Width="85"/>
-                    <DataGridTextColumn Binding="{Binding UserActivated}" Header="활성여부" Width="85"/> 
+                    <DataGridTextColumn Binding="{Binding UserID}" Header="순번"  Width="60" IsReadOnly="True"/> <!-- Width = * 모든컬럼들이 화면을 꽉채움-->
+                    <DataGridTextColumn Binding="{Binding UserIdentityNumber}" Header="사번" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserSurname}" Header="성" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserName}" Header="이름" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserEmail}" Header="이메일" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserAdmin}" Header="관리자여부" Width="85" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding UserActivated}" Header="활성여부" Width="85" IsReadOnly="True"/> 
                 </DataGrid.Columns>
                 
             </DataGrid>

@@ -12,9 +12,9 @@ namespace WpfSMSApp.View.User
     /// <summary>
     /// MyAccount.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class AddUser : Page
+    public partial class EditUser : Page
     {
-        public AddUser()
+        public EditUser()
         {
             InitializeComponent();
         }
@@ -39,6 +39,11 @@ namespace WpfSMSApp.View.User
                 CboUserActivated.ItemsSource = comboValues; // 두가지 콤보박스에 위에서 설정한게 들어간다
 
                 TxtUserID.Text = TxtUserIdentityNumber.Text = "";
+
+
+                //그리드 바인딩
+                List<Model.User> users = Logic.DataAccess.GetUsers();
+                this.DataContext = users;
             }
             catch (Exception ex)
             {
@@ -62,22 +67,7 @@ namespace WpfSMSApp.View.User
         {
             bool isValid = true;
 
-            if (string.IsNullOrEmpty(TxtUserIdentityNumber.Text))
-            {
-                LblUserIdentityNumber.Visibility = Visibility.Visible;
-                LblUserIdentityNumber.Text = "사번을 입력하세요.";
-                isValid = false;
-            }
-            else
-            {
-                var cnt = Logic.DataAccess.GetUsers().Where(u => u.UserIdentityNumber.Equals(TxtUserIdentityNumber.Text)).Count();
-                if (cnt > 0)
-                {
-                    LblUserIdentityNumber.Visibility = Visibility.Visible;
-                    LblUserIdentityNumber.Text = "중복된 사번이 존재합니다.";
-                    isValid = false;
-                }
-            }
+            
 
             if (string.IsNullOrEmpty(TxtUserName.Text))
             {
@@ -86,22 +76,7 @@ namespace WpfSMSApp.View.User
                 isValid = false;
             }
 
-            if (string.IsNullOrEmpty(TxtUserEmail.Text)) //안에 값이 비어있을때
-            {
-                LblUserEmail.Visibility = Visibility.Visible;
-                LblUserEmail.Text = "메일을 입력하세요.";
-                isValid = false;
-            }
-            else
-            {
-                var cnt = Logic.DataAccess.GetUsers().Where(u => u.UserEmail.Equals(TxtUserEmail.Text)).Count();
-                if (cnt > 0)
-                {
-                    LblUserEmail.Visibility = Visibility.Visible;
-                    LblUserEmail.Text = "중복된 이메일이 존재합니다.";
-                    isValid = false;
-                }
-            }
+            
 
             if (string.IsNullOrEmpty(TxtUserPassword.Password))
             {
@@ -147,8 +122,7 @@ namespace WpfSMSApp.View.User
                    LblUserPassword.Visibility = LblUserAdmin.Visibility =
                    LblUserActivated.Visibility = Visibility.Hidden;
 
-            var user = new Model.User(); //새로운거 만듬
-
+            var user = GrdData.SelectedItem as Model.User;
                isValid = IsValidInput();
 
                 if (isValid)
@@ -188,6 +162,29 @@ namespace WpfSMSApp.View.User
 
                 }
             
+        }
+
+        private void GrdData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+           
+            try
+            {
+                // 선택된 값이 입력창에 나오도록
+                var user = GrdData.SelectedItem as Model.User;
+
+                TxtUserID.Text = user.UserID.ToString();
+                TxtUserIdentityNumber.Text = user.UserIdentityNumber;
+                TxtUserSurName.Text = user.UserSurname;
+                TxtUserName.Text = user.UserName;
+                TxtUserEmail.Text = user.UserEmail;
+                CboUserAdmin.SelectedIndex = user.UserAdmin == false ? 0 : 1;
+                CboUserActivated.SelectedIndex = user.UserActivated == false ? 0 : 1;
+            }
+            catch (Exception ex)
+            {
+
+                Commons.LOGGER.Error($"예외발생  GrdData_SelectedCellsChanged : {ex}");
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:local="clr-namespace:WpfSMSApp.View"
     mc:Ignorable="d"
-    Title="LoginView" Height="300" Width="400"
+    Title="LoginView" Height="300" Width="400" Icon="/Resources/sign_info.png"
     ShowMaxRestoreButton="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="NoResize"
     Loaded="MetroWindow_Loaded">
     <Grid>
