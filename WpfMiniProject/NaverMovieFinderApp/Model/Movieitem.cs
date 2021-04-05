@@ -1,6 +1,6 @@
 ﻿namespace NaverMovieFinderApp.Model
 {
-    public class Movieitem
+    public class MovieItem
     {
         public string Title { get; set; }
         public string Link { get; set; }
@@ -14,7 +14,7 @@
         public string Actor { get; set; }
         public string UserRating { get; set; }
 
-        public Movieitem(string title, string link, string image, string subTitle,
+        public MovieItem(string title, string link, string image, string subTitle,
            string pubDate, string director, string actor, string userRating)
         {
             Title = title;
