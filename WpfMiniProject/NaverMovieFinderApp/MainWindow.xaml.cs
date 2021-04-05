@@ -332,7 +332,7 @@ namespace NaverMovieFinderApp
             Debug.WriteLine($"즐겨찾기여부 : {Commons.IsFavorite}");
         }
 
-        private async void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
            
         }
