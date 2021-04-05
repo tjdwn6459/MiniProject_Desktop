@@ -8,7 +8,7 @@
     xmlns:iconpacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:NaverMovieFinderApp"
     mc:Ignorable="d"
-    Title="NaverMovieFinder" Height="450" Width="1024">
+    Title="NaverMovieFinder" Height="450" Width="1024" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconpacks:PackIconForkAwesome Kind="YoutubeSquare" Margin="5, 7 ,0, 0" Foreground="White"/>
@@ -72,7 +72,7 @@
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Stretch">
             <Button x:Name="BtnAddWatchList" Content="즐겨찾기추가" Margin="5, 10" Width="120" FontSize="12"
-                    Background="ForestGreen" Foreground="White" Click="BtnAddWatchList_Click">
+                    Background="DarkOrange" Foreground="White" Click="BtnAddWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -84,7 +84,7 @@
             </Button>
 
             <Button x:Name="BtnViewWatchList" Content="즐겨찾기보기" Margin="5, 10" Width="130" FontSize="12"
-                    Background="ForestGreen" Foreground="White" Click="BtnViewWatchList_Click">
+                    Background="DarkOliveGreen" Foreground="White" Click="BtnViewWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -97,7 +97,7 @@
 
             <Button x:Name="BtnDeleteWatchList" 
                     Content="즐겨찾기삭제" Margin="5,10" Width="130" FontSize="12"
-                    Background="MediumSeaGreen" Foreground="White" Click="BtnDeleteWatchList_Click">
+                    Background="YellowGreen" Foreground="White" Click="BtnDeleteWatchList_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -109,7 +109,7 @@
             </Button>
 
             <Button x:Name="BtnWatchTrailer" Content="예고편보기" Margin="5, 10" Width="130" FontSize="12"
-                    Background="ForestGreen" Foreground="White" Click="BtnWatchTrailer_Click"  >
+                    Background="Olive" Foreground="White" Click="BtnWatchTrailer_Click"  >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -122,7 +122,7 @@
 
             <Button x:Name="BtnNaverMovieLink" 
                     Content="네이버영화" Margin="5,10" Width="130" FontSize="12"
-                    Background="ForestGreen" Foreground="White" Click="BtnNaverMovieLink_Click">
+                    Background="SaddleBrown" Foreground="White" Click="BtnNaverMovieLink_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

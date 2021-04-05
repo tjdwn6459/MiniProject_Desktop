@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using NaverMovieFinderApp.Model;
 using Newtonsoft.Json.Linq;
 using System;
@@ -320,10 +321,20 @@ namespace NaverMovieFinderApp
             }
            
 
-            var trailerWindow = new TrailerWindow();
+            var trailerWindow = new TrailerWindow(movieName);
             trailerWindow.Owner = this;
             trailerWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             trailerWindow.ShowDialog();
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine($"즐겨찾기여부 : {Commons.IsFavorite}");
+        }
+
+        private async void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           
         }
     }
 }
