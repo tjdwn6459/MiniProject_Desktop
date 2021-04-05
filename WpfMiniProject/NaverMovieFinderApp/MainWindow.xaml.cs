@@ -231,13 +231,13 @@ namespace NaverMovieFinderApp
         {
             if (Commons.IsFavorite == false)
             {
-                Commons.ShowMessageAsync("즐겨찾기", "즐겨찾기 내영이 아니면 삭제할 수 없습니다.");
+                Commons.ShowMessageAsync("즐겨찾기", "즐겨찾기 내용이 아니면 삭제할 수 없습니다.");
                 return;
             }
 
             if (GrdData.SelectedItems.Count == 0)
             {
-                Commons.ShowMessageAsync("즐겨찾기", "삭제할 즐겨찾기 영화를 선택할 수 ㄹ없습니다.");
+                Commons.ShowMessageAsync("즐겨찾기", "삭제할 즐겨찾기 영화를 선택할 수 없습니다.");
 
                 return;
             }
