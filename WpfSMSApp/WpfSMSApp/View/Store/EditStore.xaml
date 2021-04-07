@@ -1,4 +1,4 @@
-﻿<Page x:Class="WpfSMSApp.View.Store.AddStore"
+﻿<Page x:Class="WpfSMSApp.View.Store.EditStore"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfSMSApp.View.Store"
       mc:Ignorable="d" 
       d:DesignHeight="630" d:DesignWidth="1200"
-      Title="AddStore" Loaded="Page_Loaded">
+      Title="EditStore" Loaded="Page_Loaded">
     <Page.Resources>
         <Style TargetType="Label">
             <!--{x:Type Label-->
@@ -38,8 +38,8 @@
         </Grid.ColumnDefinitions>
 
         <!--제목입력-->
-        <Label Content=" 창고정보 입력" Grid.Row="0" FontSize="26" FontWeight="ExtraBold"
-               VerticalContentAlignment="Bottom" Grid.ColumnSpan="2" Height="46" Width="192" HorizontalAlignment="Left" Margin="0,2" />
+        <Label Content=" 창고정보 수정" Grid.Row="0" FontSize="26" FontWeight="ExtraBold"
+               VerticalContentAlignment="Bottom" Grid.ColumnSpan="2" Height="46" Width="189" HorizontalAlignment="Left" Margin="0,2" />
         <!--제목입력 끝-->
 
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"/>
@@ -87,7 +87,7 @@
         <!--컨텐츠 영역 끝-->
         <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                    HorizontalAlignment="Right" Orientation="Horizontal" Width="260"  >
-            <Button x:Name="BtnAdd" Height="50" Width="120" Content="입력" FontSize="14"
+            <Button x:Name="BtnAdd" Height="50" Width="120" Content="수정" FontSize="14"
                     Background="CornflowerBlue"
                     Margin="10,0" Click="BtnAdd_Click">
                 <Button.ContentTemplate>
