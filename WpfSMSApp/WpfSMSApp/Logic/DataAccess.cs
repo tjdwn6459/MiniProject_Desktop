@@ -56,7 +56,7 @@ namespace WpfSMSApp.Logic
         {
             using (var ctx = new SMSEntities())
             {
-                ctx.Store.AddOrUpdate(store);
+                ctx.Store.AddOrUpdate(store); //값이 입력이 되면 데이터베이스에 입력된 개수를 전달해준다
                 return ctx.SaveChanges();
             }
         }

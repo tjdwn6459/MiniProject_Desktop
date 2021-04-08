@@ -68,6 +68,7 @@ namespace WpfSMSApp.View.User
                 LblUserIdentityNumber.Text = "사번을 입력하세요.";
                 isValid = false;
             }
+
             else
             {
                 var cnt = Logic.DataAccess.GetUsers().Where(u => u.UserIdentityNumber.Equals(TxtUserIdentityNumber.Text)).Count();
@@ -130,6 +131,7 @@ namespace WpfSMSApp.View.User
                 LblUserEmail.Text = "이메일 형식이 올바르지 않습니다.";
                 isValid = false;
             }
+
             return isValid;
         }
 

@@ -123,7 +123,7 @@ namespace WpfSMSApp.View.Store
         private void BtnExportExcel_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Excel File (*.xlsx|*.xlsx"; //액셀화 확장자
+            dialog.Filter = "Excel File (*.xlsx)|*.xlsx";  //액셀화 확장자
             dialog.FileName = "";
             if(dialog.ShowDialog() == true)
             {

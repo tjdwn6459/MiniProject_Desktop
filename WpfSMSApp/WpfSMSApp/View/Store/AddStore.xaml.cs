@@ -38,25 +38,26 @@ namespace WpfSMSApp.View.Store
         }
 
 
-        bool IsValid = true; //지역변수 --> 전역변수
+        private bool IsValid = true; //지역변수 --> 전역변수
 
         public bool IsValidInput()
         {
-          
-
+            IsValid = true; // 위의 변수랑 다름
+            
             if (string.IsNullOrEmpty(TxtStoreName.Text))
             {
                 LblStoreName.Visibility = Visibility.Visible;
                 LblStoreName.Text = "창고명을 입력하세요.";
-                IsValid = false;
+                IsValid = false; //아무런 값이 들어있지않음
             }
+
             else
             {
                 var cnt = Logic.DataAccess.GetStores().Where(u => u.StoreName.Equals(TxtStoreName.Text)).Count();
                 if (cnt > 0)
                 {
                     LblStoreName.Visibility = Visibility.Visible;
-                    LblStoreName.Text = "중복된 사번이 존재합니다.";
+                    LblStoreName.Text = "중복된 창고명이 존재합니다.";
                     IsValid = false;
                 }
             }
@@ -77,9 +78,9 @@ namespace WpfSMSApp.View.Store
 
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e) //(object sender, RoutedEventArgs e) 입력값,  void 출력값 -> 화면상 나타나진않지만 내부에서 실행댐
         {
-            bool IsValid = true; //입력한 갑이 모두 만족하는지 판별하는 플래그
+            
 
             LblStoreName.Visibility = LblStoreLocation.Visibility = Visibility.Hidden;
             
@@ -88,7 +89,7 @@ namespace WpfSMSApp.View.Store
             IsValid = IsValidInput(); //유효성 체크(필수)
 
 
-                if (IsValid)
+                if (IsValid) //IsValid 값이 (빈값)true 일때만 실행댄다
                 {
                 // MessageBox.Show("DB 입력처리");
                     store.StoreName = TxtStoreName.Text;
@@ -98,7 +99,7 @@ namespace WpfSMSApp.View.Store
                     try
                     {
 
-                        var result = Logic.DataAccess.SetStore(store);
+                        var result = Logic.DataAccess.SetStore(store); //Logic.DataAccess.SetUser(user)
                         if (result == 0)
                         {
 
